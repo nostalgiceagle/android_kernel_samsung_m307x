@@ -440,7 +440,7 @@ void arm64_skip_faulting_instruction(struct pt_regs *regs, unsigned long size)
 	 * we return from the trap.
 	 */
 	if (user_mode(regs))
-		user_fastforward_single_step(current);
+	user_fastforward_single_step(current);
 }
 
 static LIST_HEAD(undef_hook);
