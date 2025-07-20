@@ -892,7 +892,7 @@ int f2fs_get_valid_checkpoint(struct f2fs_sb_info *sbi)
 		sbi->cur_cp_pack = 2;
 
 	/* Sanity checking of checkpoint */
-	if (sanity_check_ckpt(sbi)) {
+	if (f2fs_sanity_check_ckpt(sbi)) {
 		err = -EFSCORRUPTED;
 		goto free_fail_no_cp;
 	}
