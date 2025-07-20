@@ -221,7 +221,7 @@ out:
 	return err;
 }
 
-static int ufshcd_parse_pm_lvl_policy(struct ufs_hba *hba)
+static int __maybe_unused ufshcd_parse_pm_lvl_policy(struct ufs_hba *hba)
 {
 	struct device *dev = hba->dev;
 	struct device_node *np = dev->of_node;
@@ -249,7 +249,7 @@ static int ufshcd_parse_pm_lvl_policy(struct ufs_hba *hba)
 
 	return 0;
 }
-static int ufshcd_parse_caps_info(struct ufs_hba *hba)
+static int __maybe_unused ufshcd_parse_caps_info(struct ufs_hba *hba)
 {
 	struct device *dev = hba->dev;
 	struct device_node *np = dev->of_node;
