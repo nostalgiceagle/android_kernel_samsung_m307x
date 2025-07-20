@@ -2568,48 +2568,6 @@
 		reg = <0x9 0x0 0x80000000>;
 	};
 
-	firmware {
-
-		android {
-			compatible = "android,firmware";
-
-			vbmeta {
-				compatible = "android,vbmeta";
-				parts = "vbmeta,boot,recovery,system,vendor,product,dtb,dtbo,keystorage";
-			};
-
-			fstab {
-				compatible = "android,fstab";
-
-				system {
-					compatible = "android,system";
-					dev = "/dev/block/platform/13520000.ufs/by-name/system";
-					type = "ext4";
-					mnt_flags = "ro";
-					fsmgr_flags = "wait,avb";
-					status = "disabled";
-				};
-
-				vendor {
-					compatible = "android,vendor";
-					dev = "/dev/block/platform/13520000.ufs/by-name/vendor";
-					type = "ext4";
-					mnt_flags = "ro";
-					fsmgr_flags = "wait,verify,avb";
-					status = "okay";
-				};
-
-				product {
-					compatible = "android,product";
-					dev = "/dev/block/platform/13520000.ufs/by-name/product";
-					type = "ext4";
-					mnt_flags = "ro";
-					fsmgr_flags = "wait,verify,avb";
-				};
-			};
-		};
-	};
-
 	chipid@10000000 {
 		compatible = "samsung,exynos9-chipid";
 		reg = <0x0 0x10000000 0x100>;
