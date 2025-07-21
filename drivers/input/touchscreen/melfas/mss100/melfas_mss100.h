@@ -281,7 +281,7 @@ struct mms_ts_info {
 	struct mms_devicetree_data *dtdata;
 	struct pinctrl *pinctrl;
 	struct completion resume_done;
-
+    struct input_dev *input_dev_pad;
 	dev_t mms_dev;
 	struct class *class;
 
